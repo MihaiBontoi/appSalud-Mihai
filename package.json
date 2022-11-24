@@ -1,0 +1,26 @@
+{
+  "name": "appsalud-mihai",
+  "version": "1.0.0",
+  "description": "app salud",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MihaiBontoi/appSalud-Mihai.git"
+  },
+  "keywords": [
+    "appsalud"
+  ],
+  "author": "Mircea Mihai Bontoi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MihaiBontoi/appSalud-Mihai/issues"
+  },
+  "homepage": "https://github.com/MihaiBontoi/appSalud-Mihai#readme",
+  "devDependencies": {
+    "chai": "^4.3.7",
+    "mocha": "^10.1.0"
+  }
+}
