@@ -1,9 +1,7 @@
-
-
 const assert = require('chai').assert;
 const expect = require('chai').expect;
 const should = require('chai').should();
-const Bascula = require('../bascula.js');
+const Bascula = require('../js/bascula.js');
 
 
 describe('Main Suite -- Pruebas Unitarias Clase Bascula', () => {
