@@ -1,5 +1,5 @@
 class Paciente{
-    constructor(nombre,apellidos,fechaN){
+    constructor(nombre,apellidos,fecha = new Date()){
         this.nombre=nombre;
         this.apellidos=apellidos;
         this.fechaN=fechaN;

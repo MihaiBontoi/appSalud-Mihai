@@ -6,9 +6,15 @@ const Paciente = require('../paciente.js');
 
 describe('Main Suite -- Pruebas Unitarias Clase Paciente', () => {
     describe('Constructor Paciente -- Test ', () => {
-        const objetoPrueba=new Bascula();
+        var objetoPrueba=new Paciente("Mircea Mihai","Bontoi");
         it('saludar() = string', () => {
             expect(objetoPrueba.saludar()).to.be.a('string'); 
+            });
+        it('obtenerNombre() = Mircea Mihai', () => {
+            expect(objetoPrueba.obtenerNombre()).to.be('Mircea Mihai'); 
+            });
+        it('modificarNombre() = Mircea M.', () => {
+            expect(objetoPrueba.modificarNombre("Mircea M.")).to.be('Mircea M.'); 
             });
     })
 
