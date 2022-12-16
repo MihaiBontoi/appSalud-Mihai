@@ -3,7 +3,7 @@
 const assert = require('chai').assert;
 const expect = require('chai').expect;
 const should = require('chai').should();
-const Bascula = require('bascula.js');
+const Bascula = require('../bascula.js');
 
 
 describe('Main Suite -- Pruebas Unitarias Clase Bascula', () => {
@@ -34,10 +34,15 @@ describe('Main Suite -- Pruebas Unitarias Clase Bascula', () => {
     }); 
     describe('Constructor Báscula -- Test calcular imc', () => {
         const objetoPrueba=new Bascula();
-        it('calcularIMC() == 0',function(){
-            var altura = 170
-            var peso = 78
-            assert.deepEqual(objetoPrueba.calcularIMC(peso,altura),27, "El IMC debe ser 27");
+        it('calcularIMC(78,170) == 27',function(){
+            objetoPrueba.anotarPeso(80,176)
+            assert.deepEqual(objetoPrueba.calcularIMC(),25.8, "El IMC debe ser 25.8");
+            });    
+    });
+    describe('Constructor Báscula -- Test describir imc', () => {
+        const objetoPrueba=new Bascula();
+        it('descibrirIMC(-1)) == error',function(){
+            assert.deepEqual(objetoPrueba.describirIMC(-1),"error, IMC invalido", "error, IMC invalido");
             });
     }); 
   

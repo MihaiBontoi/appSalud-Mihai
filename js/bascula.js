@@ -30,7 +30,8 @@ class Bascula {
         return this.pesos.min();
     }
     calcularIMC(){
-        return this.imc= this.pesos.at(-1) / (this.alturas.at(-1)^2)
+        this.imc= this.pesos.at(-1) / (this.alturas.at(-1)^2)
+        return this.imc=this.imc.toFixed(2)
     }
     describirIMC(imc){
         if (imc < 16) {
@@ -66,4 +67,5 @@ module.exports={
     obtenerPesoMinimo,
     anotarPeso,
     calcularIMC,
+    describirIMC,
 };
