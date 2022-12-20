@@ -4,10 +4,10 @@
   "description": "app salud",
   "main": "index.js",
   "directories": {
-    "test": "tests"
+    "test": "test"
   },
   "scripts": {
-    "test": "tests/bascula.spec.js"
+    "test": "mocha test"
   },
   "repository": {
     "type": "git",
@@ -23,18 +23,18 @@
   },
   "homepage": "https://github.com/MihaiBontoi/appSalud-Mihai#readme",
   "devDependencies": {
-    "chai": "^4.3.7",
-    "mocha": "^10.2.0",
+    "chai": "^4.3.6",
+    "mocha": "^8.4.0",
     "request": "^2.88.2"
   },
   "dependencies": {
     "ansi-colors": "^4.1.1",
     "ansi-regex": "^5.0.1",
+    "ansi-styles": "^4.3.0",
     "anymatch": "^3.1.3",
     "argparse": "^2.0.1",
     "assertion-error": "^1.1.0",
     "balanced-match": "^1.0.2",
-    "ansi-styles": "^4.3.0",
     "binary-extensions": "^2.2.0",
     "brace-expansion": "^2.0.1",
     "braces": "^3.0.2",
@@ -59,8 +59,8 @@
     "flat": "^5.0.2",
     "fs.realpath": "^1.0.0",
     "get-caller-file": "^2.0.5",
-    "glob": "^7.2.0",
     "get-func-name": "^2.0.0",
+    "glob": "^7.2.0",
     "glob-parent": "^5.1.2",
     "has-flag": "^4.0.0",
     "he": "^1.2.0",
