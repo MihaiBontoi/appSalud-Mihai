@@ -33,6 +33,9 @@ class Bascula {
         return this.imc=this.imc.toFixed(2)
     }
     describirIMC(imc){
+        if (imc < 0){
+            return "error, IMC invalido"
+        }
         if (imc < 16) {
            return "Infrapeso (delgadez severa)";
         }
@@ -58,5 +61,9 @@ class Bascula {
             return "Obeso (Tipo III)"
         }
     }
+    
   }
+
+module.exports=Bascula;
+
 

@@ -1,11 +1,11 @@
 class Paciente{
-    constructor(nombre,apellidos,fecha = new Date()){
+    constructor(nombre,apellidos,fechaN = new Date()){
         this.nombre=nombre;
         this.apellidos=apellidos;
         this.fechaN=fechaN;
     }
     saludar(){
-        return "Hola soy "+ this.nombre + this.apellidos;
+        return "Hola soy "+ this.nombre+" " + this.apellidos;
     }
     obtenerNombre(){
         return this.nombre;
@@ -41,3 +41,4 @@ class Paciente{
 
 
 }
+module.exports=Paciente;
