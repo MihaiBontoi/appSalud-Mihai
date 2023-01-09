@@ -1,3 +1,23 @@
+function at(n) {
+    // ToInteger() abstract op
+    n = Math.trunc(n) || 0;
+    // Allow negative indexing from the end
+    if (n < 0) n += this.length;
+    // OOB access is guaranteed to return undefined
+    if (n < 0 || n >= this.length) return undefined;
+    // Otherwise, this is just normal property access
+    return this[n];
+}
+
+const TypedArray = Reflect.getPrototypeOf(Int8Array);
+for (const C of [Array, String, TypedArray]) {
+    Object.defineProperty(C.prototype, "at",
+                          { value: at,
+                            writable: true,
+                            enumerable: false,
+                            configurable: true });
+}
+
 class Bascula {
     constructor() {
         this.pesos = new Array();
@@ -28,9 +48,8 @@ class Bascula {
             return 0;}
         return this.pesos.min();
     }
-    calcularIMC(){
-        this.imc= this.pesos.at(-1) / (this.alturas.at(-1)^2)
-        return this.imc=this.imc.toFixed(2)
+    calcularIMC(){ 
+        return parseFloat(this.imc=(this.pesos.at(-1) / (this.alturas.at(-1)**2)*10000).toFixed(1))
     }
     describirIMC(imc){
         if (imc < 0){

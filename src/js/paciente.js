@@ -1,5 +1,6 @@
+const Bascula = require('./bascula.js')
 class Paciente{
-    constructor(nombre,apellidos,fechaN = new Date()){
+    constructor(nombre,apellidos,fechaN){
         this.nombre=nombre;
         this.apellidos=apellidos;
         this.fechaN=fechaN;
@@ -26,7 +27,11 @@ class Paciente{
         return this.fechaN = fecha
     }
     obtenerEdad(){
-        var fechaH = new Date()
+        var fechaH = (new Date()).toLocaleDateString('es-es', {
+            day: '2-digit',
+            month: '2-digit',
+            year: 'numeric',
+          })
         return this.fechaN.getTime() - fechaH.getTime()
     }
     modificarBascula(bascula){
