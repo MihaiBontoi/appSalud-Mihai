@@ -41,15 +41,17 @@ class Bascula {
     obtenerPesoMaximo(){
         if (this.pesos.length == 0){
             return 0;}
-        return this.pesos.max();
+        return Math.max.apply(null,this.pesos);
     }
     obtenerPesoMinimo(){
         if (this.pesos.length == 0){
             return 0;}
-        return this.pesos.min();
+        return Math.min.apply(null,this.pesos);
     }
-    calcularIMC(){ 
-        return parseFloat(this.imc=(this.pesos.at(-1) / (this.alturas.at(-1)**2)*10000).toFixed(1))
+    calcularIMC(){
+        if (this.pesos.length === 0 ){
+         return -1}
+        return parseFloat(this.imc=(this.pesos.at(-1) / (this.alturas.at(-1)**2)).toFixed(2))
     }
     describirIMC(imc){
         if (imc < 0){
@@ -61,7 +63,7 @@ class Bascula {
         else if (imc >=16 && imc < 17){
             return "Infrapeso (delgadez moderada)"
         }
-        else if (imc >=17 && imc < 18,5){
+        else if (imc >=17 && imc < 18.5){
             return "Infrapeso (delgadez aceptable)"
         }
         else if (imc >=18.5 && imc < 25){
@@ -73,10 +75,10 @@ class Bascula {
         else if (imc >=30 && imc < 35){
             return "Obeso (Tipo I)"
         }
-        else if (imc >=35 && imc < 40){
+        else if (imc >=35 && imc <= 40){
             return "Obeso (Tipo II)"
         }
-        else if (imc >=40){
+        else if (imc >40){
             return "Obeso (Tipo III)"
         }
     }

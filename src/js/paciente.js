@@ -3,7 +3,7 @@ class Paciente{
     constructor(nombre,apellidos,fechaN){
         this.nombre=nombre;
         this.apellidos=apellidos;
-        this.fechaN=fechaN;
+        this.fechaN=new Date(fechaN)
     }
     saludar(){
         return "Hola soy "+ this.nombre+" " + this.apellidos;
@@ -21,18 +21,25 @@ class Paciente{
         return this.apellidos = apellidos
     }
     obtenerFechaNacimiento(){
-        return this.fechaN;
+        return this.fechaN.toLocaleDateString('es-es', {
+            day: '2-digit',
+            month: '2-digit',
+            year: 'numeric',
+          });
     }
     modificarFechaNacimento(fecha){
         return this.fechaN = fecha
     }
     obtenerEdad(){
-        var fechaH = (new Date()).toLocaleDateString('es-es', {
+        var d1=new Date(new Date(this.fechaN).toLocaleDateString('en-us', {
             day: '2-digit',
             month: '2-digit',
             year: 'numeric',
-          })
-        return this.fechaN.getTime() - fechaH.getTime()
+          }))
+
+        var d2=new Date()
+        var dif=Math.abs(d1 - d2)
+        return parseInt(new Date(dif)/(1000*60*60*24*365))
     }
     modificarBascula(bascula){
         return this.bascula = bascula;
@@ -41,6 +48,7 @@ class Paciente{
         return this.bascula=new Bascula();
     }
     calcularIMC(){
+        if (this.bascula === undefined) {return -1}
         return this.bascula.calcularIMC();
     }
 
