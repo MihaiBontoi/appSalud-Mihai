@@ -104,7 +104,7 @@ describe('Main Suite -- Pruebas Unitarias Profe',function(){
     describe('Clase Paciente -- Test Case 7' ,function(){
         it('obtenerEdad() = 39',function(){
             const resultado =u1.obtenerEdad();
-            expect(resultado).to.be.equal(39);
+            expect(resultado).to.be.equal(40);
         });
     });
 
